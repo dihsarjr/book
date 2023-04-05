@@ -4,10 +4,10 @@ from django.http import JsonResponse
 
 # Create your views here.
 
-def get_book_list():
+def get_book_list(request):
     book_list = Book.objects.all()
-    bool_python = list(book_list.values)
+    bool_python = list(book_list.values())
     return JsonResponse({
-        'book_list' : book_list,
+        'book_list' : bool_python,
     })
 
