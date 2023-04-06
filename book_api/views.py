@@ -12,4 +12,13 @@ def get_book_list(request):
     serializer = BookSerializer(book_list,many = True)
     return Response(serializer.data)
 
+@api_view(['POST'])
+def book_create(request):
+    serializer = BookSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    else:
+        return Response(serializer.errors)
+
 
