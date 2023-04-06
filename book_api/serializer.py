@@ -10,4 +10,6 @@ class BookSerializer(serializers.Serializer):
 
     def create(self, data):
         return Book.objects.create(**data)
+    
+    
 
