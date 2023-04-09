@@ -62,7 +62,7 @@ class BookCreate(APIView):
 class BookDetails(APIView):
     def get_book_by_pk(self,pk):
         try:
-            book = Book.objects.get(pk=pk)
+           return Book.objects.get(pk=pk)
         except:
             return Response({"error":"book does not exist",},status= status.HTTP_404_NOT_FOUND)
 
